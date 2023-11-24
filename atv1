@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main()
+{
+    int i;
+   int idade[5];
+   float altura[5];
+   float peso[5];
+   char Nome[5][300];
+   
+   int MaiorIdade = 0;
+   float MaiorPeso = 0;
+    float MaisAlto = 0;
+   int MenorIdade = 9999;
+   float MenorPeso = 9999;
+    float MaisBaixo = 9999;
+    
+    for(i = 0;i < 5;i++){
+        printf("%dº Nome:",i + 1);
+        scanf("%s",&Nome[i]);
+        
+        printf("%dº idade:",i + 1);
+        scanf("%d",&idade[i]);
+        
+        printf("%dº Altura:",i+ 1);
+        scanf("%f",&altura[i]);
+        
+        printf("%dº peso:",i+ 1);
+        scanf("%f",&peso[i]);
+        
+    MaiorIdade = MaiorIdade > idade[i] ?MaiorIdade : idade[i];
+    MenorIdade = MenorIdade < idade[i] ?MenorIdade : idade[i];
+    
+    MaiorPeso = MaiorPeso > peso[i]?MaiorPeso : peso[i];
+    MenorPeso = MenorPeso < peso[i] ?MenorPeso : peso[i];
+    
+    MaisAlto = MaisAlto > altura[i]?MaisAlto : altura[i];
+    MaisBaixo = MaisBaixo < altura[i] ?MaisBaixo : altura[i];
+    
+    }
+    
+    printf("");
+    printf("Maior Idade: %d \n",MaiorIdade);
+    printf("Menor Idade: %d \n \n",MenorIdade);
+    printf("------------------------- \n");
+    printf("Maior Peso: %.2f \n",MaiorPeso);
+    printf("Menor Peso: %.2f \n \n",MenorPeso);
+    printf("------------------------- \n");
+    printf("Mais alto: %.2f \n",MaisAlto);
+    printf("Mais Baixo: %.2f \n \n",MaisBaixo);
+    printf("------------------------- \n");
+    
+    
+    return 0;
+}
