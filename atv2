@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int i, j;
+    char nome[5][200];
+    int idade[5];
+    int soma = 0;
+    float notas[3][3];
+    float media[3];
+
+    for (i = 0; i < 5; i++)
+    {
+        printf("\n %dº Nome: ", i + 1);
+        gets(nome[i]);
+        
+            printf("%dº Idade: ", i + 1);
+            scanf("%d",&idade[i]);
+
+        for (j = 0; j < 3; j++)
+        {
+            printf("%dº Notas:",j + 1);
+            scanf("%f",&notas[i][j]);
+        soma = soma + notas[i][j];
+        }
+        
+        media[i] = soma / 3;
+        soma = 0;
+        setbuf(stdin, 0);
+    }
+    system("cls || clear");
+    
+    for (i = 0; i < 5; i++)
+    {
+
+        printf("-------------------------\n");
+        printf("%dº Nome: %s \n", i + 1,nome[i]);
+            printf("%dº Idade: %d \n", i + 1, idade[i]);
+
+        for (j = 0; j < 3; j++)
+        {
+            printf("%dº Notas: %.1f \n", j + 1, notas[i][j]);
+            
+        }
+           
+            printf("média: %.1f \n", i + 1, media[i]);
+        
+       	if(media[i] >= 7 ){
+			printf("Aprovado! \n");
+		} else if(media[i] >= 5 ){
+			printf("Recuperação! \n");
+		} else {
+			printf("Reprovado! \n");
+		}
+        
+    }
+
+    return 0;
+}
